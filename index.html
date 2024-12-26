@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Well Soon ❤️ Prompt Rétablissement</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #fef2f2;
+            min-height: 100vh;
+            color: #374151;
+        }
+
+        .card {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .title {
+            font-size: 2.5em;
+            margin: 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+
+        .message-container {
+            padding: 20px;
+        }
+
+        .message {
+            background: #fef2f2;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-left: 4px solid #ff758c;
+        }
+
+        .message img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .message-text {
+            font-size: 1.1em;
+            line-height: 1.5;
+            margin: 15px 0;
+        }
+
+        .signature {
+            font-style: italic;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 15s linear infinite;
+            opacity: 0.5;
+            color: #ff758c;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(100vh); }
+            100% { transform: translateY(-100px); }
+        }
+
+        @media (max-width: 600px) {
+            .title { font-size: 2em; }
+            .subtitle { font-size: 1.2em; }
+            .message { padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1 class="title">❤️ Get Well Soon ❤️<br>Prompt Rétablissement</h1>
+            <div class="subtitle">Sending you love and healing wishes<br>On t'envoie plein d'amour et d'ondes positives</div>
+        </div>
+        <div class="message-container">
+            <!-- Template message, copy and modify for each person -->
+            <div class="message">
+                <img src="/api/placeholder/400/300" alt="Message image">
+                <div class="message-text">
+                    Hey! Just wanted to let you know we're all thinking of you and sending lots of positive vibes your way. Your strength is inspiring! Take all the time you need to rest and heal. 
+                    <br><br>
+                    Salut! Je voulais te dire qu'on pense fort à toi et qu'on t'envoie plein d'ondes positives. Tu es une inspiration! Prends tout le temps nécessaire pour te reposer et guérir.
+                </div>
+                <div class="signature">- With love / Avec amour, [Name/Nom]</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="floating-hearts" id="hearts"></div>
+
+    <script>
+        function createHearts() {
+            const container = document.getElementById('hearts');
+            const hearts = ['❤️', '💗', '💖', '💓'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = (15 + Math.random() * 10) + 's';
+                heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                container.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 15000);
+            }, 2000);
+        }
+
+        createHearts();
+    </script>
+</body>
+</html>
